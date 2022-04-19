@@ -1,7 +1,6 @@
 import React from "react";
 import BoardSquare from "./BoardSquare";
 import Knight from "./Knight";
-import { movePosition, canMoveKnight } from "./Game";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
@@ -42,8 +41,4 @@ function renderPiece(x, y, [knightX, knightY]) {
   if (x === knightX && y === knightY) {
     return <Knight />;
   }
-}
-
-function handleSquareClick(toX, toY) {
-  if (canMoveKnight(toX, toY)) movePosition(toX, toY);
 }
